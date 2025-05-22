@@ -37,7 +37,7 @@ This a monolithic application that is built using the following technologies:
 ## Issue Reporting
 
 ### Using the GitHub UI
-1. Navigate to the [Issues](https://github.com/username/binary-2-decimal-convertor/issues) tab of the repository
+1. Navigate to the [Issues](https://github.com/msjackiebrown/binary-2-decimal-convertor/issues) tab of the repository
 2. Click on "New Issue"
 3. Select either "Bug Report" or "Feature Request" template
 4. Fill in the required information and submit the issue
@@ -46,7 +46,7 @@ This a monolithic application that is built using the following technologies:
 This repository has a GitHub Action that allows for creating issues directly through the GitHub Actions interface:
 
 #### Single Issue Creation
-1. Navigate to the [Actions](https://github.com/username/binary-2-decimal-convertor/actions) tab of the repository
+1. Navigate to the [Actions](https://github.com/msjackiebrown/binary-2-decimal-convertor/actions) tab of the repository
 2. Select the "Create Issues" workflow
 3. Click "Run workflow"
 4. Select **Creation mode**: "single"
@@ -58,18 +58,7 @@ This repository has a GitHub Action that allows for creating issues directly thr
 6. Click "Run workflow" to create the issue
 
 #### Bulk Issue Creation
-This repository supports creating multiple issues at once using a JSON or CSV file:
-
-1. Navigate to the [Actions](https://github.com/username/binary-2-decimal-convertor/actions) tab of the repository
-2. Select the "Create Issues" workflow
-3. Click "Run workflow"
-4. Select **Creation mode**: "bulk"
-5. Specify the path to your issues file (default: `.github/issues/bulk-issues.json`)
-6. Click "Run workflow" to create all issues defined in the file
-
-For bulk issue creation, prepare a JSON or CSV file with the issues you want to create. Examples are available in the `.github/issues/` directory:
-- JSON format: `.github/issues/bulk-issues.json`
-- CSV format: `.github/issues/bulk-issues.csv`
+For creating multiple issues at once, please see the [Bulk GitHub Issue Creator Tool](#using-bulk-github-issue-creator-tool) section below.
 
 For bug reports, please include:
 - Steps to reproduce the issue
@@ -84,7 +73,7 @@ For feature requests, please include:
 
 ## Bulk Issue Format
 
-For bulk issue creation, you can use either JSON or CSV format:
+The [Bulk GitHub Issue Creator](#using-bulk-github-issue-creator-tool) tool supports both JSON and CSV formats for defining issues:
 
 ### JSON Format
 ```json
@@ -111,16 +100,13 @@ title,body,labels,assignees
 "Another Issue","Description for another issue","bug",""
 ```
 
-You can add as many issues as needed to these files. To use your custom file:
-1. Add it to the repository (e.g., in the `.github/issues/` directory)
-2. When running the workflow, specify the path to your file relative to the repository root
-3. The action will process all issues in the file and create them in the repository
+You can add as many issues as needed to these files. To use your custom file with the Bulk GitHub Issue Creator tool, see the section below.
 
 ### Using Bulk GitHub Issue Creator Tool
 
-For advanced issue management, a separate tool has been developed that allows for bulk issue creation across any GitHub repository:
+The recommended tool for bulk issue creation is our custom-built application:
 
-**[Bulk GitHub Issue Creator](https://github.com/username/bulk-github-issue-creator)**
+**[Bulk GitHub Issue Creator](https://github.com/msjackiebrown/bulk-github-issue-creator)**
 
 This standalone Java application provides the following benefits:
 - Create multiple issues at once using JSON or CSV files
@@ -130,13 +116,13 @@ This standalone Java application provides the following benefits:
 - Dry-run mode to preview before creating
 
 To use this tool:
-1. Clone the repository: `git clone https://github.com/username/bulk-github-issue-creator.git`
+1. Clone the repository: `git clone https://github.com/msjackiebrown/bulk-github-issue-creator.git`
 2. Build with Maven: `mvn clean package`
 3. Run with your repository and issue file: 
    ```
-   java -jar target/bulk-github-issue-creator-1.0.0-jar-with-dependencies.jar --repo username/binary-2-decimal-convertor --file issues.json
+   java -jar target/bulk-github-issue-creator-1.0.0-jar-with-dependencies.jar --repo msjackiebrown/binary-2-decimal-convertor --file issues.json
    ```
 
-See the [Bulk GitHub Issue Creator README](https://github.com/username/bulk-github-issue-creator) for complete documentation.
+See the [Bulk GitHub Issue Creator README](https://github.com/msjackiebrown/bulk-github-issue-creator) for complete documentation.
 
 
