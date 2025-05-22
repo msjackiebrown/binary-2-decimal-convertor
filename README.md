@@ -42,34 +42,6 @@ This a monolithic application that is built using the following technologies:
 3. Select either "Bug Report" or "Feature Request" template
 4. Fill in the required information and submit the issue
 
-### Using GitHub Actions
-This repository has a GitHub Action that allows for creating issues directly through the GitHub Actions interface:
-
-#### Single Issue Creation
-1. Navigate to the [Actions](https://github.com/msjackiebrown/binary-2-decimal-convertor/actions) tab of the repository
-2. Select the "Create Issues" workflow
-3. Click "Run workflow"
-4. Select **Creation mode**: "single"
-5. Fill in the following information:
-   - **Issue title**: A concise title describing the issue
-   - **Issue body**: Detailed description of the issue or feature request
-   - **Issue labels**: Comma-separated list of labels (e.g., "bug,documentation")
-   - **Issue assignees**: GitHub usernames of people to assign (comma-separated)
-6. Click "Run workflow" to create the issue
-
-#### Bulk Issue Creation
-For creating multiple issues at once, please see the [Bulk GitHub Issue Creator Tool](#using-bulk-github-issue-creator-tool) section below.
-
-For bug reports, please include:
-- Steps to reproduce the issue
-- Expected behavior
-- Actual behavior
-- Environment details (OS, Java version, etc.)
-
-For feature requests, please include:
-- A clear description of the proposed feature
-- Why this feature would be beneficial
-- Any implementation ideas you may have
 
 ## Bulk Issue Format
 
