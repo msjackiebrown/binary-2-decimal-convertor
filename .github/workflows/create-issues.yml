@@ -1,0 +1,60 @@
+name: Create Issues
+
+on:
+  workflow_dispatch:
+    inputs:
+      creationMode:
+        description: 'Creation mode (single or bulk)'
+        required: true
+        default: 'single'
+        type: choice
+        options:
+          - single
+          - bulk
+      issueTitle:
+        description: 'Issue title (for single mode)'
+        required: false
+        type: string
+      issueBody:
+        description: 'Issue body (for single mode)'
+        required: false
+        type: string
+      issueLabels:
+        description: 'Issue labels, comma-separated (for single mode)'
+        required: false
+        type: string
+      issueAssignees:
+        description: 'Issue assignees, comma-separated (for single mode)'
+        required: false
+        type: string
+      issuesFilePath:
+        description: 'Path to issues file (for bulk mode)'
+        required: false
+        default: '.github/issues/binary-converter-tasks.json'
+        type: string
+
+jobs:
+  create-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create single issue
+        if: ${{ github.event.inputs.creationMode == 'single' }}
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_TITLE: ${{ github.event.inputs.issueTitle }}
+          ISSUE_BODY: ${{ github.event.inputs.issueBody }}
+          ISSUE_LABELS: ${{ github.event.inputs.issueLabels }}
+          ISSUE_ASSIGNEES: ${{ github.event.inputs.issueAssignees }}
+        with:
+          filename: .github/workflows/single-issue-template.md
+
+      - name: Create issues in bulk
+        if: ${{ github.event.inputs.creationMode == 'bulk' }}
+        uses: dasmerlon/github-action-issues-from-file@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          file-path: ${{ github.event.inputs.issuesFilePath }}
