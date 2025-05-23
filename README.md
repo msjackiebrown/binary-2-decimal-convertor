@@ -1,26 +1,26 @@
 # Binary-2-Decimal-Convertor
 
+> **Note:** This project was created with the assistance of AI. The implementation successfully meets all requirements and demonstrates the power of AI-assisted development. 
+
 Binary is the number system all digital computers are based on. Therefore it's important for developers to understand binary, or base 2, mathematics. The purpose of Bin2Dec is to provide practice and understanding of how binary calculations.
 
 Bin2Dec allows the user to enter strings of up to 8 binary digits, 0's and 1's, in any sequence and then displays its decimal equivalent.
 
 This challenge requires that the developer implementing it follow these constraints:
 
-Arrays may not be used to contain the binary digits entered by the user
-Determining the decimal equivalent of a particular binary digit in the sequence must be calculated using a single mathematical function, for example the natural logarithm. It's up to you to figure out which function to use.
+- Arrays may not be used to contain the binary digits entered by the user
+- Determining the decimal equivalent of a particular binary digit in the sequence must be calculated using a single mathematical function, for example the natural logarithm. It's up to you to figure out which function to use.
 
+## User Stories
+- User can enter a variable number of binary digits
+- User must be notified if anything other than a 0 or 1 was entered
+- User views the results in a single output field containing the decimal (base 10) equivalent of the binary number that was entered
 
-# User Stories
- User can enter a variable number of binary digits
- User must be notified if anything other than a 0 or 1 was entered
- User views the results in a single output field containing the decimal (base 10) equivalent of the binary number that was entered
-
-
-# Design
+## Design
 
 ![image](design.png)
 
-# System Architecture
+## System Architecture
 This a monolithic application that is built using the following technologies:
 - Java 21
 - JavaFX
@@ -32,97 +32,114 @@ This a monolithic application that is built using the following technologies:
 - JavaFX CSS
 - JavaFX FXML
 
-# Contributing
+## Features
 
-## Issue Reporting
+The Binary-to-Decimal Converter application provides the following features:
 
-### Using the GitHub UI
+- **User-Friendly Interface**: Clean and intuitive JavaFX interface for easy interaction
+- **Input Validation**: Real-time validation ensuring only valid binary numbers (0s and 1s) are accepted
+- **Error Handling**: Clear error messages when invalid input is detected
+- **Conversion Logic**: Converts binary numbers to their decimal equivalents using both:
+  - Java's built-in `Integer.parseInt()` method
+  - A custom mathematical implementation using powers of 2
+- **Comprehensive Logging**: Detailed logging using Log4j for debugging and auditing
+- **Responsive Design**: Adapts to different window sizes
+- **Keyboard Shortcuts**: Support for keyboard navigation and shortcuts
+
+## Building and Running the Application
+
+### Prerequisites
+
+- Java Development Kit (JDK) 21 or later
+- Maven 3.6+ (optional, as the project includes Maven Wrapper)
+
+### Building the Project
+
+#### Using Maven Wrapper (Recommended)
+
+The project includes a Maven Wrapper, which allows you to build the project without installing Maven.
+
+```powershell
+# On Windows
+.\mvnw.cmd clean package
+
+# On macOS/Linux
+./mvnw clean package
+```
+
+#### Using Maven (if installed)
+
+```powershell
+mvn clean package
+```
+
+### Running the Application
+
+```powershell
+# Using Maven Wrapper on Windows
+.\mvnw.cmd javafx:run
+
+# Using Maven Wrapper on macOS/Linux
+./mvnw javafx:run
+
+# Using Maven directly
+mvn javafx:run
+```
+
+### Running Tests
+
+```powershell
+# Using Maven Wrapper on Windows
+.\mvnw.cmd test
+
+# Using Maven directly
+mvn test
+```
+
+For more detailed build and run instructions, please see the [BUILD.md](BUILD.md) file.
+
+## Contributing
+
+### Issue Reporting
+
 1. Navigate to the [Issues](https://github.com/msjackiebrown/binary-2-decimal-convertor/issues) tab of the repository
 2. Click on "New Issue"
 3. Select either "Bug Report" or "Feature Request" template
 4. Fill in the required information and submit the issue
 
-### Using GitHub Actions
-This repository has a GitHub Action that allows for creating issues directly through the GitHub Actions interface:
+### Feature Requests and Bug Reports
 
-#### Single Issue Creation
-1. Navigate to the [Actions](https://github.com/msjackiebrown/binary-2-decimal-convertor/actions) tab of the repository
-2. Select the "Create Issues" workflow
-3. Click "Run workflow"
-4. Select **Creation mode**: "single"
-5. Fill in the following information:
-   - **Issue title**: A concise title describing the issue
-   - **Issue body**: Detailed description of the issue or feature request
-   - **Issue labels**: Comma-separated list of labels (e.g., "bug,documentation")
-   - **Issue assignees**: GitHub usernames of people to assign (comma-separated)
-6. Click "Run workflow" to create the issue
+If you have suggestions for new features or encounter bugs while using the application, please create an issue with the following information:
 
-#### Bulk Issue Creation
-For creating multiple issues at once, please see the [Bulk GitHub Issue Creator Tool](#using-bulk-github-issue-creator-tool) section below.
+- For bugs: Include steps to reproduce, expected behavior, and actual behavior
+- For feature requests: Include a clear description of the proposed feature and why it would be valuable
 
-For bug reports, please include:
-- Steps to reproduce the issue
-- Expected behavior
-- Actual behavior
-- Environment details (OS, Java version, etc.)
+### Pull Requests
 
-For feature requests, please include:
-- A clear description of the proposed feature
-- Why this feature would be beneficial
-- Any implementation ideas you may have
+If you'd like to contribute code to the project:
 
-## Bulk Issue Format
+1. Fork the repository
+2. Create a new branch for your feature or bug fix
+3. Implement your changes
+4. Add tests for your changes if applicable
+5. Make sure all tests pass
+6. Submit a pull request
 
-The [Bulk GitHub Issue Creator](#using-bulk-github-issue-creator-tool) tool supports both JSON and CSV formats for defining issues:
+## License
 
-### JSON Format
-```json
-[
-  {
-    "title": "Issue Title",
-    "body": "Issue description and details",
-    "labels": "label1,label2",
-    "assignees": "username1,username2"
-  },
-  {
-    "title": "Another Issue",
-    "body": "Description for another issue",
-    "labels": "bug",
-    "assignees": ""
-  }
-]
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### CSV Format
-```csv
-title,body,labels,assignees
-"Issue Title","Issue description and details","label1,label2","username1,username2"
-"Another Issue","Description for another issue","bug",""
-```
+## Acknowledgements
 
-You can add as many issues as needed to these files. To use your custom file with the Bulk GitHub Issue Creator tool, see the section below.
+This project was entirely created with the assistance of AI, demonstrating how AI tools can be leveraged for software development. The AI successfully:
 
-### Using Bulk GitHub Issue Creator Tool
+- Set up the complete Maven project structure
+- Implemented the JavaFX UI
+- Created the binary-to-decimal conversion logic
+- Configured proper logging with Log4j2
+- Wrote comprehensive unit tests
+- Generated detailed documentation
 
-The recommended tool for bulk issue creation is our custom-built application:
-
-**[Bulk GitHub Issue Creator](https://github.com/msjackiebrown/bulk-github-issue-creator)**
-
-This standalone Java application provides the following benefits:
-- Create multiple issues at once using JSON or CSV files
-- Use from any machine with Java installed
-- Work with any GitHub repository
-- Detailed reporting of creation results
-- Dry-run mode to preview before creating
-
-To use this tool:
-1. Clone the repository: `git clone https://github.com/msjackiebrown/bulk-github-issue-creator.git`
-2. Build with Maven: `mvn clean package`
-3. Run with your repository and issue file: 
-   ```
-   java -jar target/bulk-github-issue-creator-1.0.0-jar-with-dependencies.jar --repo msjackiebrown/binary-2-decimal-convertor --file issues.json
-   ```
-
-See the [Bulk GitHub Issue Creator README](https://github.com/msjackiebrown/bulk-github-issue-creator) for complete documentation.
+This approach showcases how AI can accelerate software development while maintaining high quality and adhering to best practices.
 
 
