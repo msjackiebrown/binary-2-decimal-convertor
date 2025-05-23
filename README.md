@@ -1,5 +1,7 @@
 # Binary-2-Decimal-Convertor
 
+> **Note:** This project was created with the assistance of AI. The implementation successfully meets all requirements and demonstrates the power of AI-assisted development. 
+
 Binary is the number system all digital computers are based on. Therefore it's important for developers to understand binary, or base 2, mathematics. The purpose of Bin2Dec is to provide practice and understanding of how binary calculations.
 
 Bin2Dec allows the user to enter strings of up to 8 binary digits, 0's and 1's, in any sequence and then displays its decimal equivalent.
@@ -126,5 +128,18 @@ If you'd like to contribute code to the project:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+This project was entirely created with the assistance of AI, demonstrating how AI tools can be leveraged for software development. The AI successfully:
+
+- Set up the complete Maven project structure
+- Implemented the JavaFX UI
+- Created the binary-to-decimal conversion logic
+- Configured proper logging with Log4j2
+- Wrote comprehensive unit tests
+- Generated detailed documentation
+
+This approach showcases how AI can accelerate software development while maintaining high quality and adhering to best practices.
 
 
